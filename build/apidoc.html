@@ -1,0 +1,1099 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://www.adaltas.com/projects/node-each/"
+
+    >each (v0.6.1)</a>
+</h1>
+<h4>Chained and parallel async iterator in one elegant function</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.each">module each</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.each">
+            function <span class="apidocSignatureSpan"></span>each
+            <span class="apidocSignatureSpan">(elements)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each">
+            function <span class="apidocSignatureSpan">each.</span>Each
+            <span class="apidocSignatureSpan">(options, _elements)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">each.</span>Each.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.each.Each">module each.Each</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.Each">
+            function <span class="apidocSignatureSpan">each.</span>Each
+            <span class="apidocSignatureSpan">(options, _elements)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.each.Each.prototype">module each.Each.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype._call_next_then">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>_call_next_then
+            <span class="apidocSignatureSpan">(error, count)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype._get_current_handler">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>_get_current_handler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype._has_next_handler">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>_has_next_handler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype._next">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>_next
+            <span class="apidocSignatureSpan">(err)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype._run">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>_run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.call">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>call
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.close">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.end">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>end
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.error">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>error
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.files">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>files
+            <span class="apidocSignatureSpan">(base, pattern)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.parallel">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>parallel
+            <span class="apidocSignatureSpan">(mode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.pause">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>pause
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.push">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>push
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.repeat">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>repeat
+            <span class="apidocSignatureSpan">(t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.resume">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>resume
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.run">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>run
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.sync">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>sync
+            <span class="apidocSignatureSpan">(s)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.then">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>then
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.times">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>times
+            <span class="apidocSignatureSpan">(t)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.unshift">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>unshift
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.each.Each.prototype.write">
+            function <span class="apidocSignatureSpan">each.Each.prototype.</span>write
+            <span class="apidocSignatureSpan">(item)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.each" id="apidoc.module.each">module each</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.each.each" id="apidoc.element.each.each">
+        function <span class="apidocSignatureSpan"></span>each
+        <span class="apidocSignatureSpan">(elements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">each = function (elements) {
+  return new Each(elements);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each" id="apidoc.element.each.Each">
+        function <span class="apidocSignatureSpan">each.</span>Each
+        <span class="apidocSignatureSpan">(options, _elements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Each = function (options, _elements) {
+  var isObject, self, type;
+  this.options = options;
+  this._elements = _elements;
+  if (arguments.length === 1) {
+    this._elements = this.options;
+    this.options = {};
+  }
+  type = typeof this._elements;
+  if (this._elements === null || type === &#x27;undefined&#x27;) {
+    this._elements = [];
+  } else if (type === &#x27;number&#x27; || type === &#x27;string&#x27; || type === &#x27;function&#x27; || type === &#x27;boolean&#x27;) {
+    this._elements = [this._elements];
+  } else if (!Array.isArray(this._elements)) {
+    isObject = true;
+  }
+  if (isObject) {
+    this._keys = Object.keys(this._elements);
+  }
+  this._errors = [];
+  this.options.concurrency = 1;
+  this.options.sync = false;
+  this.options.times = 1;
+  this.options.repeat = false;
+  this._close = false;
+  this._handler_index = 0;
+  this.total = this._keys ? this._keys.length : this._elements.length;
+  this.listeners = [];
+  this._endable = 1;
+  this.started = 0;
+  this.done = 0;
+  this.paused = 0;
+  this.readable = true;
+  self = this;
+  setImmediate((function(_this) {
+    return function() {
+      return _this._run();
+    };
+  })(this));
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.each.Each" id="apidoc.module.each.Each">module each.Each</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.Each" id="apidoc.element.each.Each.Each">
+        function <span class="apidocSignatureSpan">each.</span>Each
+        <span class="apidocSignatureSpan">(options, _elements)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">Each = function (options, _elements) {
+  var isObject, self, type;
+  this.options = options;
+  this._elements = _elements;
+  if (arguments.length === 1) {
+    this._elements = this.options;
+    this.options = {};
+  }
+  type = typeof this._elements;
+  if (this._elements === null || type === &#x27;undefined&#x27;) {
+    this._elements = [];
+  } else if (type === &#x27;number&#x27; || type === &#x27;string&#x27; || type === &#x27;function&#x27; || type === &#x27;boolean&#x27;) {
+    this._elements = [this._elements];
+  } else if (!Array.isArray(this._elements)) {
+    isObject = true;
+  }
+  if (isObject) {
+    this._keys = Object.keys(this._elements);
+  }
+  this._errors = [];
+  this.options.concurrency = 1;
+  this.options.sync = false;
+  this.options.times = 1;
+  this.options.repeat = false;
+  this._close = false;
+  this._handler_index = 0;
+  this.total = this._keys ? this._keys.length : this._elements.length;
+  this.listeners = [];
+  this._endable = 1;
+  this.started = 0;
+  this.done = 0;
+  this.paused = 0;
+  this.readable = true;
+  self = this;
+  setImmediate((function(_this) {
+    return function() {
+      return _this._run();
+    };
+  })(this));
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.each.Each.prototype" id="apidoc.module.each.Each.prototype">module each.Each.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype._call_next_then" id="apidoc.element.each.Each.prototype._call_next_then">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>_call_next_then
+        <span class="apidocSignatureSpan">(error, count)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_call_next_then = function (error, count) {
+  var i, j, len, listener, occurences, ref, ref1, ref2;
+  occurences = 0;
+  ref = this.listeners;
+  for (i = j = 0, len = ref.length; j &#x3c; len; i = ++j) {
+    listener = ref[i];
+    if (listener[0] === &#x27;call&#x27;) {
+      occurences++;
+      continue;
+    }
+    if (listener[0] === &#x27;error&#x27; &#x26;&#x26; error &#x26;&#x26; occurences &#x3e;= this._handler_index) {
+      listener[1].call(null, error);
+      if (((ref1 = this.listeners[i + 1]) != null ? ref1[0] : void 0) === &#x27;then&#x27;) {
+        continue;
+      } else {
+        return;
+      }
+    }
+    if (listener[0] === &#x27;then&#x27; &#x26;&#x26; occurences &#x3e;= this._handler_index) {
+      if (((ref2 = this.listeners[i - 1]) != null ? ref2[0] : void 0) === &#x27;error&#x27;) {
+        if (!error) {
+          listener[1].call(null, count);
+        }
+      } else {
+        listener[1].call(null, error, count);
+      }
+      return;
+    }
+  }
+  throw Error(&#x27;Invalid State: error or then not defined&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype._get_current_handler" id="apidoc.element.each.Each.prototype._get_current_handler">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>_get_current_handler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_get_current_handler = function () {
+  var j, len, listener, occurences, ref;
+  occurences = 0;
+  ref = this.listeners;
+  for (j = 0, len = ref.length; j &#x3c; len; j++) {
+    listener = ref[j];
+    if (listener[0] !== &#x27;call&#x27;) {
+      continue;
+    }
+    if (occurences === this._handler_index) {
+      return listener[1];
+    }
+    occurences++;
+  }
+  throw Error(&#x27;No Found Handler&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype._has_next_handler" id="apidoc.element.each.Each.prototype._has_next_handler">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>_has_next_handler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_has_next_handler = function () {
+  var j, len, listener, occurences, ref;
+  occurences = 0;
+  ref = this.listeners;
+  for (j = 0, len = ref.length; j &#x3c; len; j++) {
+    listener = ref[j];
+    if (listener[0] !== &#x27;call&#x27;) {
+      continue;
+    }
+    if (occurences === this._handler_index) {
+      return true;
+    }
+    occurences++;
+  }
+  return false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype._next" id="apidoc.element.each.Each.prototype._next">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>_next
+        <span class="apidocSignatureSpan">(err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_next = function (err) {
+  if ((err != null) &#x26;&#x26; err instanceof Error) {
+    this._errors.push(err);
+  }
+  this.done++;
+  return this._run();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype._run" id="apidoc.element.each.Each.prototype._run">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>_run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_run = function () {
+  var args, err, error, error1, handler, handlers, i, index, j, l, len, self;
+  if (this.paused) {
+    return;
+  }
+  handlers = this._get_current_handler();
+  error = null;
+  if (this._endable === 1 &#x26;&#x26; (this._close || this.done === this.total * this.options.times * handlers.length || (this._errors.length
+ &#x26;&#x26; this.started === this.done))) {
+    this._handler_index++;
+    if (this._errors.length || !this._has_next_handler()) {
+      this.readable = false;
+      if (this._errors.length) {
+        if (this.options.concurrency !== 1) {
+          if (this._errors.length === 1) {
+            error = this._errors[0];
+          } else {
+            error = new Error(&#x22;Multiple errors (&#x22; + this._errors.length + &#x22;)&#x22;);
+            error.errors = this._errors;
+          }
+        } else {
+          error = this._errors[0];
+        }
+      } else {
+        args = [];
+      }
+      this._call_next_then(error, this.done);
+      return;
+    }
+    handlers = this._get_current_handler();
+    this._endable = 1;
+    this.started = 0;
+    this.done = 0;
+    this.paused = 0;
+    this.readable = true;
+  }
+  if (this._errors.length !== 0) {
+    return;
+  }
+  while ((this.options.concurrency === true ? (this.total * this.options.times * handlers.length - this.started) &#x3e; 0 : Math.min(
+this.options.concurrency - this.started + this.done, this.total * this.options.times * handlers.length - this.started))) {
+    if (this._errors.length !== 0) {
+      break;
+    }
+    if (this._close) {
+      break;
+    }
+    if (this.options.repeat) {
+      index = this.started % this._elements.length;
+    } else {
+      index = Math.floor(this.started / (this.options.times * handlers.length));
+    }
+    this.started += handlers.length;
+    try {
+      self = this;
+      for (i = j = 0, len = handlers.length; j &#x3c; len; i = ++j) {
+        handler = handlers[i];
+        l = handler.length;
+        if (this.options.sync) {
+          l++;
+        }
+        switch (l) {
+          case 1:
+            args = [];
+            break;
+          case 2:
+            if (this._keys) {
+              args = [this._elements[this._keys[index]]];
+            } else {
+              args = [this._elements[index]];
+            }
+            break;
+          case 3:
+            if (this._keys) {
+              args = [this._keys[index], this._elements[this._keys[index]]];
+            } else {
+              args = [this._elements[index], index];
+            }
+            break;
+          case 4:
+            if (this._keys) {
+              args = [this._keys[index], this._elements[this._keys[index]], index];
+            } else {
+              return self._next(new Error(&#x27;Invalid arguments in item callback&#x27;));
+            }
+            break;
+          default:
+            return self._next(new Error(&#x27;Invalid arguments in item callback&#x27;));
+        }
+        if (!this.options.sync) {
+          args.push((function() {
+            var count;
+            count = 0;
+            return function(err) {
+              if (err) {
+                return self._next(err);
+              }
+              if (++count !== 1) {
+                err = new Error(&#x27;Multiple call detected&#x27;);
+                if (self.readable) {
+                  return self._next(err);
+                } else {
+                  throw err;
+                }
+              }
+              return self._next();
+            };
+          })());
+        }
+        err = handler.apply(null, args);
+        if (this.options.sync) {
+          self._next(err);
+        }
+      }
+    } catch (error1) {
+      err = error1;
+      if (self.readable) {
+        self._next(err);
+      } else {
+        throw err;
+      }
+    }
+  }
+  return null;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.call" id="apidoc.element.each.Each.prototype.call">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>call
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">call = function (callback) {
+  if (!Array.isArray(callback)) {
+    callback = [callback];
+  }
+  this.listeners.push([&#x27;call&#x27;, callback]);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Node Each is a single elegant function to iterate asynchronously over elements
+both in `sequential`, `parallel` and `concurrent` mode.
+
+## Example
+
+```javascript
+each( [{id: 1}, {id: 2}, {id: 3}] )
+.<span class="apidocCodeKeywordSpan">call</span>( function(element, index, next){
+  console.log(&#x27;element: &#x27;, element, &#x27;@&#x27;, index);
+  setTimeout(next, 500);
+})
+.then( function(err){
+  console.log(err ? err.message : &#x27;Done&#x27;);
+});
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.close" id="apidoc.element.each.Each.prototype.close">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  this._close = true;
+  this._next();
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.end" id="apidoc.element.each.Each.prototype.end">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>end
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">end = function () {
+  console.log(&#x27;Function `end` deprecated, use `close` instead.&#x27;);
+  return this.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.error" id="apidoc.element.each.Each.prototype.error">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>error
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">error = function (callback) {
+  this.listeners.push([&#x27;error&#x27;, callback]);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+each( [{id: 1}, {id: 2}, {id: 3}] )
+.parallel( 4 )
+.call(function(element, index, next) {
+console.log(&#x27;element: &#x27;, element, &#x27;@&#x27;, index);
+setTimeout(next, 500);
+})
+.<span class="apidocCodeKeywordSpan">error</span>(function(err){
+console.log(err.message);
+err.errors.forEach(function(error){
+  console.log(&#x27;  &#x27;+error.message);
+});
+})
+.then(function(){
+console.log(&#x27;Done&#x27;);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.files" id="apidoc.element.each.Each.prototype.files">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>files
+        <span class="apidocSignatureSpan">(base, pattern)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">files = function (base, pattern) {
+  var j, len, p;
+  if (arguments.length === 1) {
+    pattern = base;
+    base = null;
+  }
+  if (Array.isArray(pattern)) {
+    for (j = 0, len = pattern.length; j &#x3c; len; j++) {
+      p = pattern[j];
+      this.files(p);
+    }
+    return this;
+  }
+  this._endable--;
+  if (base) {
+    pattern = path.resolve(base, pattern);
+  }
+  glob(pattern, (function(_this) {
+    return function(err, files) {
+      var file, k, len1;
+      for (k = 0, len1 = files.length; k &#x3c; len1; k++) {
+        file = files[k];
+        _this._elements.push(file);
+      }
+      _this.total += files.length;
+      return setImmediate(function() {
+        _this._endable++;
+        return _this._run();
+      });
+    };
+  })(this));
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.parallel" id="apidoc.element.each.Each.prototype.parallel">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>parallel
+        <span class="apidocSignatureSpan">(mode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parallel = function (mode) {
+  if (typeof mode === &#x27;number&#x27;) {
+    this.options.concurrency = mode;
+  } else if (mode) {
+    this.options.concurrency = mode;
+  } else {
+    this.options.concurrency = 1;
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+var each = require(&#x27;..&#x27;);
+
+each( [{id: 1}, {id: 2}, {id: 3}] )
+.<span class="apidocCodeKeywordSpan">parallel</span>( 4 )
+.call(function(element, index, next) {
+console.log(&#x27;element: &#x27;, element, &#x27;@&#x27;, index);
+setTimeout(next, 500);
+})
+.error(function(err){
+console.log(err.message);
+err.errors.forEach(function(error){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.pause" id="apidoc.element.each.Each.prototype.pause">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>pause
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pause = function () {
+  return this.paused++;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.push" id="apidoc.element.each.Each.prototype.push">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>push
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">push = function (item) {
+  var l;
+  l = arguments.length;
+  if (l === 1) {
+    this._elements.push(arguments[0]);
+  } else if (l === 2) {
+    if (!this._keys) {
+      this._keys = [];
+    }
+    this._keys.push(arguments[0]);
+    this._elements[arguments[0]] = arguments[1];
+  }
+  this.total++;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.repeat" id="apidoc.element.each.Each.prototype.repeat">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>repeat
+        <span class="apidocSignatureSpan">(t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">repeat = function (t) {
+  this.options.repeat = true;
+  this.options.times = t;
+  if (this._elements.length === 0) {
+    this.write(null);
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.resume" id="apidoc.element.each.Each.prototype.resume">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>resume
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resume = function () {
+  this.paused--;
+  return this._run();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.run" id="apidoc.element.each.Each.prototype.run">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>run
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function (callback) {
+  console.log(&#x27;DEPRECATED: use `call` instead of `run`&#x27;);
+  return this.call(callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.sync" id="apidoc.element.each.Each.prototype.sync">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>sync
+        <span class="apidocSignatureSpan">(s)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function (s) {
+  this.options.sync = (s != null) || true;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.then" id="apidoc.element.each.Each.prototype.then">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>then
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">then = function (callback) {
+  this.listeners.push([&#x27;then&#x27;, callback]);
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+```javascript
+each( [{id: 1}, {id: 2}, {id: 3}] )
+.call( function(element, index, next){
+  console.log(&#x27;element: &#x27;, element, &#x27;@&#x27;, index);
+  setTimeout(next, 500);
+})
+.<span class="apidocCodeKeywordSpan">then</span>( function(err){
+  console.log(err ? err.message : &#x27;Done&#x27;);
+});
+```
+
+## Development
+
+Node Each comes with a few example, all present in the &#x22;samples&#x22; folder. Here&#x27;s how you may run each of them :
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.times" id="apidoc.element.each.Each.prototype.times">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>times
+        <span class="apidocSignatureSpan">(t)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">times = function (t) {
+  this.options.times = t;
+  if (this._elements.length === 0) {
+    this.write(null);
+  }
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.unshift" id="apidoc.element.each.Each.prototype.unshift">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>unshift
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unshift = function (item) {
+  var index, l;
+  l = arguments.length;
+  if (this.options.repeat) {
+    index = this.started % this._elements.length;
+  } else {
+    index = Math.floor(this.started / this.options.times);
+  }
+  if (l === 1) {
+    this._elements.splice(index, 0, arguments[0]);
+  } else if (l === 2) {
+    if (!this._keys) {
+      this._keys = [];
+    }
+    this._keys.splice(index, 0, arguments[0]);
+    this._elements[arguments[0]] = arguments[1];
+  }
+  this.total++;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.each.Each.prototype.write" id="apidoc.element.each.Each.prototype.write">
+        function <span class="apidocSignatureSpan">each.Each.prototype.</span>write
+        <span class="apidocSignatureSpan">(item)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">write = function (item) {
+  var l;
+  l = arguments.length;
+  if (l === 1) {
+    this._elements.push(arguments[0]);
+  } else if (l === 2) {
+    if (!this._keys) {
+      this._keys = [];
+    }
+    this._keys.push(arguments[0]);
+    this._elements[arguments[0]] = arguments[1];
+  }
+  this.total++;
+  return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
